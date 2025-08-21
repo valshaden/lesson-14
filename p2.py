@@ -14,6 +14,6 @@ cursor = conn.cursor()
 
 cursor.execute('''
     INSERT INTO users (username, password) VALUES (?, ?)
-''', ('Alice', 'password'))
+''', ('user1', 'password1'))
 
 conn.commit()
