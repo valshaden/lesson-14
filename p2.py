@@ -12,8 +12,20 @@ cursor = conn.cursor()
 #    )
 #''')
 
-cursor.execute('''
+#cursor.execute('''
+#    INSERT INTO users (username, password) VALUES (?, ?)
+#''', ('user1', 'password1'))
+
+users = [
+    ('user9', 'password9'),
+    ('user10', 'password10'),
+    ('Галина', 'Карымова'),
+]
+
+cursor.executemany('''
     INSERT INTO users (username, password) VALUES (?, ?)
-''', ('user1', 'password1'))
+''', users)
+
 
 conn.commit()
+
