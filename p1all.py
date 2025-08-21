@@ -22,8 +22,8 @@ def add_numbers(a,b):
     logger.debug(f"Начало выполнения add_numbers с параметрами: a={a}, b={b}") 
     if type(a) != int or type(b) != int:            
         try:
-            a = int(a)
-            b = int(b)
+            a = float(a)
+            b = float(b)
         except:
             logger.error(f"Неудалось преобразовать к числу : a={type(a)}, b={type(b)}")   
             return None    
@@ -34,6 +34,12 @@ def add_numbers(a,b):
 logger.debug("Программа запущена")
 result = add_numbers(5, 3)
 logger.info(f"Результат: {result}")
+
 result = add_numbers(5, '30')
+logger.info(f"Результат: {result}")
 
 result = add_numbers("5.5", '30')
+logger.info(f"Результат: {result}")
+
+result = add_numbers("5.5", 'Hellow')
+logger.info(f"Результат: {result}")
