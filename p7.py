@@ -26,7 +26,7 @@ cursor = conn.cursor()
 #    INSERT INTO users (username, password) VALUES (?, ?)
 #''', users)
 
-cursor.execute("UPDATE users SET username = 'Ирина' WHERE id = 1")
+cursor.execute("DELETE FROM users WHERE id = 1")
 conn.commit()
 
 #users = cursor.fetchall()
