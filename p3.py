@@ -16,17 +16,21 @@ cursor = conn.cursor()
 #    INSERT INTO users (username, password) VALUES (?, ?)
 #''', ('user1', 'password1'))
 
-users = [
-    ('user9', 'password9'),
-    ('user10', 'password10'),
-    ('Галина', 'Карымова'),
-]
+#users = [
+#    ('user9', 'password9'),
+#    ('user10', 'password10'),
+#    ('Галина', 'Карымова'),
+#]
 
-cursor.executemany('''
-    INSERT INTO users (username, password) VALUES (?, ?)
-''', users)
+#cursor.executemany('''
+#    INSERT INTO users (username, password) VALUES (?, ?)
+#''', users)
 
+cursor.execute('''
+    SELECT * FROM users
+''')
+users = cursor.fetchall()
+print(*users, sep='\n')
 
-
-conn.commit()
+#conn.commit()
 
