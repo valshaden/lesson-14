@@ -43,3 +43,5 @@ logger.info(f"Результат: {result}")
 
 result = add_numbers("5.5", 'Hellow')
 logger.info(f"Результат: {result}")
+
+name = "John"
